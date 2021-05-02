@@ -1,4 +1,4 @@
-const buildHTML = (XHR)=> {
+const buildHTML = (XHR) => {
   const item = XHR.response.post;
   const html = `
     <div class="post">
@@ -16,7 +16,7 @@ function post (){
   const submit = document.getElementById("submit");
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    const form = document.getElementById("form");
+    const form = document.getElementById("form")
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
     XHR.open("POST", "/posts", true);
@@ -29,8 +29,7 @@ function post (){
       }
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
-      list.insertAdyacentHTML("afterend", buildHTML(XHR));
-      list.insertAdjacentHTML("afterend", html);
+      list.insertAdjacentHTML("afterend", buildHTML(XHR));
       formText.value = "";
     };
   });
